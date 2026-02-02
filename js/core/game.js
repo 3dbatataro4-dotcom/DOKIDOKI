@@ -489,6 +489,13 @@ window.Game = {
             const saveData = JSON.parse(json);
             this.state = saveData.state;
             
+            // 恢復睡覺按鈕狀態
+            if (this.state.freeChatMode) {
+                document.getElementById("sleep-menu-item").style.display = "block";
+            } else {
+                document.getElementById("sleep-menu-item").style.display = "none";
+            }
+
             // 恢復介面狀態
             document.getElementById('start-screen').classList.add('hidden');
             document.getElementById('start-screen').classList.remove('active');
