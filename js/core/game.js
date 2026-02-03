@@ -31,12 +31,12 @@ window.Game = {
     init: function() {
         console.log("Game Core Initializing...");
         
-        if (!window.day1_script || !window.day2_script || !window.day3_script) {
+        if (!window.day1_script || !window.day2_script || !window.day3_script || !window.day4_script) {
             console.error("Scripts not loaded!");
             return alert("劇本檔案載入失敗！請檢查網絡連線或檔案完整性。");
         }
 
-        this.fullScript = { ...window.day1_script, ...window.day2_script, ...window.day3_script };
+        this.fullScript = { ...window.day1_script, ...window.day2_script, ...window.day3_script, ...window.day4_script };
 
         window.ChatSystem.init(this);
         window.Minigame.init(this);
@@ -689,6 +689,8 @@ window.Game = {
             this.loadScene("day2_intro");
         } else if (this.state.currentDay === 3) {
             this.loadScene("day3_intro");
+        } else if (this.state.currentDay === 4) {
+            this.loadScene("day4_intro");
         } else {
             alert("試玩版結束！感謝遊玩！");
             location.reload();
@@ -839,10 +841,43 @@ window.Game = {
                 window.ChatSystem.renderMoments();
             }
 
+            // Day 4
+            else if (id === "day4_intro") this.loadScene("day4_morning_encounter");
+            else if (id === "day4_morning_encounter") this.showChoices(this.fullScript.day4_morning_choice);
+            else if (id === "day4_accept_ktv") this.loadScene("day4_trans_lunch");
+            else if (id === "day4_trans_lunch") this.showChoices(this.fullScript.day4_lunch_prompt);
+            else if (["day4_lunch_peter", "day4_lunch_lanlan", "day4_lunch_ora"].includes(id)) this.loadScene("day4_trans_ktv");
+            else if (id === "day4_trans_ktv") this.showChoices(this.fullScript.day4_ktv_choice);
+            else if (id === "day4_ktv_happy") this.loadScene("day4_ktv_end");
+            else if (id === "day4_ktv_sentimental") {
+                // 白月光分支邏輯
+                if (this.state.route === "lynn") this.loadScene("day4_ktv_memory_lynn");
+                else if (this.state.route === "jornona") this.loadScene("day4_ktv_memory_jornona");
+                else if (this.state.route === "melas") this.loadScene("day4_ktv_memory_melas");
+                else this.loadScene("day4_ktv_memory_normal");
+            }
+            else if (["day4_ktv_memory_normal", "day4_ktv_memory_lynn", "day4_ktv_memory_jornona", "day4_ktv_memory_melas"].includes(id)) {
+                this.loadScene("day4_ktv_end");
+            }
+            else if (id === "day4_ktv_end") this.loadScene("day4_trans_home");
+            else if (id === "day4_trans_home") {
+                this.state.currentChatTarget = 'group';
+                const footer = document.querySelector('.chat-footer');
+                if (footer) footer.style.display = 'none';
+                this.loadScene("day4_chat_start");
+            }
+            else if (id === "day4_chat_start") this.loadScene("day4_night_chat_content");
+            else if (id === "day4_night_chat_content") {
+                 // 這裡其實會由 chat system 處理 choice，但如果 choice 結束後沒有跳轉...
+                 // 我們在 script 中定義了 next
+            }
+
+
             // Handle Chat Endings (Transition to Free Chat)
             else if (["chat_reply_normal", "chat_reply_scary", 
                       "day2_chat_sleep", "day2_chat_romantic",
-                      "day3_chat_excited", "day3_chat_tired"].includes(id)) {
+                      "day3_chat_excited", "day3_chat_tired",
+                      "day4_chat_happy", "day4_chat_quiet"].includes(id)) {
                 
                 console.log("Scripted chat ended. Entering free chat mode.");
                 this.state.freeChatMode = true;
