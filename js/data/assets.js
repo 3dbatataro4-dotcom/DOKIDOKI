@@ -13,7 +13,8 @@ window.ASSETS = {
         amusement: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/%E9%81%8A%E6%88%B2%E5%9C%92_1Week.jpg",
         aquarium: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/%E6%B5%B7%E7%94%9F%E9%A4%A8_1Week.jpg",
         restaurant: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/%E9%A4%90%E5%BB%B3_1Week.jpg",
-        arcade: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/%E9%81%8A%E6%88%B2%E5%BB%B3_1Week.jpg"
+        arcade: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/%E9%81%8A%E6%88%B2%E5%BB%B3_1Week.jpg",
+        ktv: "https://file.garden/aWe99vhwaGcNwkok/DOKIDOKI/BG/1770077979192.png"
     },
     char: {
         peter: {
