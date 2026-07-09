@@ -1,132 +1,136 @@
 window.day3_script = {
-    // --- Day 3: 社團危機？ (Start) ---
+    // --- Day 3: 社團讀書會 ---
     day3_intro: [
-        { bg: "home", bgm: "peace", text: "早晨的陽光透過窗簾灑在臉上，又是平靜的一天。", name: "我" },
-        { text: "雖然這個社團有點奇怪，但不知不覺也習慣了。", name: "我" },
-        { bg: "gate", text: "剛走到校門口，就看到佈告欄前圍了一群人。", name: "我" },
-        { text: "「社團整頓通知」...我們社團該不會有危險吧？", name: "我" }
+        { bg: "home", bgm: "peace", text: "早晨的空氣有些清涼，今天似乎是個適合靜下心來讀書的日子。", name: "我" },
+        { text: "下週就要期中考了，校園裡的氣氛也變得緊張了一些。", name: "我" },
+        { bg: "gate", text: "走進學校，圖書館門口已經排起了長龍。", name: "我" },
+        { text: "看來大家都在為了考試衝刺呢。", name: "我" }
     ],
 
     // --- Day 3: Morning Class (早晨) ---
     day3_morning_encounter: [
-        { bg: "classroom", text: "走進教室，氣氛意外地嚴肅。", name: "我" },
-        { char: "peter", name: "彼得", emotion: "confused", text: "（拿著一張通知單，眉頭深鎖）Shit...學生會那些傢伙竟然敢查我的社團？", effect: "shake" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "彼得你不是學生會長嗎？自己查自己呀？", effect: "jump" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "程序上來說，彼得是會長，但審核是由「風紀委員會」執行的。獨立機構。", effect: "breathe" },
-        { text: "原來是因為我們社團的活動紀錄太過「抽象」，被要求整改。", name: "我" }
+        { bg: "classroom", text: "走進教室，那三個人正圍坐在一起，桌上堆滿了各種厚重的參考書。", name: "我" },
+        { char: "peter", name: "彼得", emotion: "normal", text: "（拿著紅筆在重點上畫著筆直的線）Shit，這本教材的排版太混亂了，簡直是在挑戰我的耐心！", effect: "shake" },
+        { char: "lanlan", name: "蘭蘭", emotion: "bored", text: "好無聊呀...這些字拆開我都認識，合在一起我就想睡覺呀。彼得，我們直接買下出題老師的題庫好不好呀？", effect: "jump" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "（推眼鏡）蘭蘭，那種行為會破壞學術公平性的機率是 100%。如果你們想及格，就閉嘴聽我講解這道物理題。", effect: "breathe" },
+        { text: "看來今天的社團活動要變成讀書會了。", name: "我" }
     ],
+    // Day 3 Morning - Lynn Route
     day3_morning_encounter_lynn: [
-        { bg: "classroom", char: "peter", name: "彼得", emotion: "happy", text: "林恩！你來得正好！", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "那些老頑固說我們的社團「缺乏教育意義」。簡直是笑話。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "happy", text: "只要你在，這裡就是全世界最有意義的地方！我這就去把風紀委員會買下來。", effect: "shake" }
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "happy", text: "貓貓！快過來！", effect: "jump" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "我已經幫你把所有的重點都整理好了，還用不同顏色的筆標記了難易度。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "你只要看我整理的這本就行了。外面的那些參考書都有細菌，別碰。" }
     ],
+    // Day 3 Morning - Jornona Route
     day3_morning_encounter_jornona: [
-        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆別擔心！", effect: "jump" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "如果社團被廢了，我就把那棟樓買下來，改成「喬諾娜粉絲俱樂部」！", effect: "breathe" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "然後我們每天在裡面開派對！吃櫻桃！", effect: "jump" }
+        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆老婆！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "我為了讀書特別買了這個鑲鑽的自動鉛筆呀！握起來手感超好的！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "給你用！只要用這枝筆，一定能考一百分呀！" }
     ],
+    // Day 3 Morning - Melas Route
     day3_morning_encounter_melas: [
-        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "這只是小概率事件。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，我需要你的協助。我們來偽造...不，是「優化」一份完美的活動報告。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "讓他們看看什麼叫做完美的邏輯閉環。" }
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "蜜拉思，過來。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "我發現了一個有趣的數學悖論，我們來討論一下吧。" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "至於考試那種低難度的東西，對我們來說根本不需要複習。" }
     ],
 
     // --- Day 3: Break Choice (課間) ---
     day3_break_prompt: {
-        text: "課間休息。大家都在思考如何證明社團的價值。",
+        text: "下課了，教室裡的讀書氣氛依舊濃厚。",
         options: [
-            { text: "幫彼得整理文件 (彼得)", target: "day3_break_peter", char: "peter", affection: 5 },
-            { text: "陪蘭蘭想新點子 (蘭蘭)", target: "day3_break_lanlan", char: "lanlan", affection: 5 },
-            { text: "看奧拉寫報告 (奧拉)", target: "day3_break_ora", char: "ora", affection: 5 }
+            { location: "走廊", action: "找彼得借用他的神級筆記", target: "day3_break_peter", char: "peter", affection: 5, color: "var(--peter-color)" },
+            { location: "後門", action: "陪蘭蘭去透透氣", target: "day3_break_lanlan", char: "lanlan", affection: 5, color: "var(--lanlan-color)" },
+            { location: "座位", action: "向奧拉請教難題", target: "day3_break_ora", char: "ora", affection: 5, color: "var(--ora-color)" }
         ]
     },
+
     day3_break_peter: [
-        { bg: "classroom", char: "peter", name: "彼得", emotion: "confused", text: "這張紙有摺痕...這張有污漬...全部重寫！", effect: "shake" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "我們的報告必須是聖潔無瑕的。就像我的靈魂一樣。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "喂，庶民。去幫我拿新的A4紙，要最貴的那種。" }
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "normal", text: "筆記？拿去吧，記得手要洗乾淨再翻。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "confused", text: "Shit，如果你在上面留下指紋或者摺痕，我會讓你整個暑假都留在學校補習。", effect: "shake" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "不過...如果你有哪裡看不懂，可以直接來問我。我允許你佔用我的休息時間。" }
     ],
     day3_break_peter_lynn: [
-        { bg: "classroom", char: "peter", name: "彼得", emotion: "smile", text: "貓貓，你坐著就好。這些粗活讓別人做。", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "happy", text: "或者你在報告上蓋個手印？我覺得這比任何文字都有說服力。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "happy", text: "這是藝術！是神蹟！" }
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "smile", text: "貓貓，累了嗎？", effect: "jump" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "讀書這種事太傷神了。我已經叫人準備了補腦的頂級魚油。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "來，張嘴。我餵你吃。" }
     ],
 
     day3_break_lanlan: [
-        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "我們來辦烤肉大會吧！", effect: "jump" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "在教室裡生火，然後大家圍在一起跳舞！這樣多有活力呀！", effect: "breathe" },
-        { text: "我覺得那樣只會加速我們被廢社...", name: "我" }
+        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "bored", text: "啊啊啊！讀書真的好痛苦呀！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "老婆我們翹課去吃甜點好不好呀？我聽說吃甜的會變聰明呀！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "如果不行的話...那我把學校買下來，把考試取消掉好不好呀？" }
     ],
     day3_break_lanlan_jornona: [
-        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "那我們辦演唱會？", effect: "jump" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "老婆你來主唱，我負責在後面噴火特效！", effect: "breathe" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "雖然你唱歌會走音...但我可以把音響燒了，這樣大家就聽不出來了！聰明吧？" }
+        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆老婆！你看這個！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "我幫你買了全套的櫻桃圖案文具呀！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "這樣讀書的時候也會心情很好呀！老婆你真可愛！" }
     ],
 
     day3_break_ora: [
-        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "（打字速度快到看不清手指）", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "ignore", text: "我在引用 300 篇心理學論文來論證我們社團對校園穩定的必要性。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "雖然大部分是我現編的，但符合學術格式，沒人看得出來。" }
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "這道題的解法有三種，但最有效率的是這一種。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "ignore", text: "雖然老師教的方法也能得分，但會浪費 30 秒的運算時間。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "看好了，我只演示一遍。別分心。" }
     ],
     day3_break_ora_melas: [
-        { bg: "classroom", char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，這個論點如何？", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "「論高智商個體在封閉環境下的交互作用」。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "happy", text: "把我們的日常對話當作實驗數據附上去。這絕對能拿諾貝爾獎。" }
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，這道題的陷阱在於假設條件。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "就像這個世界一樣，很多表面上的真相其實都是邏輯漏洞。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "happy", text: "但只要有你在，我就能找到唯一的正確答案。" }
     ],
 
     // --- Day 3: Lunch (午休) ---
     day3_trans_lunch: [
-        { bg: "corridor", text: "午休時間。大家決定分頭行動，尋找能「豐富社團活動」的靈感。", name: "我" }
+        { bg: "corridor", text: "午休時間。校園廣播提醒大家要注意休息，不要過度勞累。", name: "我" },
+        { text: "食堂裡也推出了特製的「考勝便當」。", name: "我" }
     ],
     day3_lunch_prompt: {
-        text: "要跟誰一起去考察呢？",
         options: [
-            { text: "去花園找靈感 (彼得)", target: "day3_lunch_peter", char: "peter", affection: 15 },
-            { text: "去販賣部搶麵包 (蘭蘭)", target: "day3_lunch_lanlan", char: "lanlan", affection: 15 },
-            { text: "去視聽教室 (奧拉)", target: "day3_lunch_ora", char: "ora", affection: 15 }
+            { location: "圖書館", action: "和彼得一起安靜讀書", target: "day3_lunch_peter", char: "peter", affection: 15, color: "var(--peter-color)" },
+            { location: "高級餐廳", action: "接受蘭蘭的補腦大餐", target: "day3_lunch_lanlan", char: "lanlan", affection: 15, color: "var(--lanlan-color)" },
+            { location: "實驗室", action: "看奧拉做複習資料", target: "day3_lunch_ora", char: "ora", affection: 15, color: "var(--ora-color)" }
         ]
     },
+
     day3_lunch_peter: [
-        { bg: "gate", char: "peter", name: "彼得", emotion: "normal", text: "花園的空氣勉強還算清新。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "confused", text: "我想在社團裡放一些植物。但不能有土，土太髒了。", effect: "shake" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "水耕栽培？還是直接用水晶做的花？你覺得呢？" }
+        { bg: "library", char: "peter", name: "彼得", emotion: "normal", text: "圖書館的空氣確實比教室要安靜得多。", effect: "breathe" },
+        { text: "他正專心地翻閱著一本厚厚的法律典籍。", name: "我" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "坐下吧，我幫你留了位置。別發出聲音，否則我會把你趕出去。" },
+        { char: "peter", name: "彼得", emotion: "normal", text: "不過...如果你累了，可以靠在我的肩上休息一下。只限今天。" }
     ],
     day3_lunch_peter_lynn: [
-        { bg: "gate", char: "peter", name: "彼得", emotion: "happy", text: "貓貓，這朵玫瑰給你。", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "smile", text: "我剛把刺都拔掉了，還消毒過了。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "happy", text: "你是花園裡最乾淨的存在。我只想看著你。" }
+        { bg: "library", char: "peter", name: "彼得", emotion: "happy", text: "貓貓，讀累了嗎？", effect: "jump" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "我幫你按摩一下肩膀吧。我的力道可是經過精確計算的。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "舒服嗎？只要你開心，我做什麼都可以。" }
     ],
 
     day3_lunch_lanlan: [
-        { bg: "corridor", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "衝呀！最後一個炒麵麵包是我的！", effect: "jump" },
-        { text: "蘭蘭像一陣風一樣衝進人群，然後一臉得意地拿著戰利品回來。", name: "我" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "雖然我有錢可以把販賣部買下來，但搶來的比較好吃呀！分你一半！" }
+        { bg: "restaurant", char: "lanlan", name: "蘭蘭", emotion: "smile", text: "讀書太辛苦了，一定要補充熱量呀！", effect: "jump" },
+        { text: "蘭蘭叫了一桌子的高級甜點和炸雞。", name: "我" },
+        { char: "lanlan", name: "蘭蘭", emotion: "normal", text: "這些都是我從巴黎空運過來的呀！吃完了保證你腦力全開！", effect: "shake" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "來，新同學，這塊最大的炸雞給你呀！" }
     ],
     day3_lunch_lanlan_jornona: [
-        { bg: "corridor", char: "lanlan", name: "蘭蘭", emotion: "surprise", text: "老婆！有人撞到你了嗎？", effect: "shake" },
-        { char: "lanlan", name: "蘭蘭", emotion: "angry", text: "誰敢撞你我就...我就給他錢讓他滾遠點！", effect: "breathe" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "你看，我買了櫻桃口味的牛奶！雖然這好像是草莓味的...顏色差不多啦！" }
+        { bg: "restaurant", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆老婆！你看這個！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "我請大廚把巧克力做成你的樣子了呀！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "太可愛了，我都捨不得吃了呀！老婆你比巧克力還甜呀！" }
     ],
 
     day3_lunch_ora: [
-        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "視聽教室的隔音效果不錯。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "ignore", text: "我在測試不同頻率的白噪音對專注力的影響。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "社團以後可以播放這個。雖然蘭蘭可能會睡著，彼得可能會抓狂。" }
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "我正在製作一份各科重點的預測模型。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "ignore", text: "根據歷年來的考題分佈，明年的重點有 85% 的機率會出現在這幾個章節。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "這份資料只給你一個人看。別讓彼得看到，不然他又要說我作弊了。" }
     ],
     day3_lunch_ora_melas: [
-        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "這裡只有我們兩個人。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "數據顯示，在安靜的環境下，我們的心跳頻率會趨於同步。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "happy", text: "要不要驗證一下？過來，讓我聽聽。" }
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，這道題的邏輯跟你昨晚說的很像。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "happy", text: "我發現我們的思維模式越來越同步了，這對我的研究很有幫助。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "陪我再去圖書館查點資料吧，只有你在我身邊我才靜得下心。" }
     ],
 
     // --- Day 3: Club (社團活動 - 小遊戲) ---
     day3_trans_club: [
-        { bg: "club_room", bgm: "club", text: "放學後，我們回到了社團教室。", name: "" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "報告已經完成了。雖然內容大部分是廢話，但看起來很專業。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "我灑了香水在上面。風紀委員聞到就會頭暈，然後就會通過了。", effect: "shake" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "我在裡面夾了一張支票！雙重保險！", effect: "jump" },
-        { text: "這群人解決問題的方式還真是一如既往...", name: "我" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "現在，來做點正事吧。詞彙庫更新了，這次的主題是「未來的願景」。" },
-        { text: "（小遊戲詞彙已更新：夢想, 努力, 幸運, 奶茶, 音樂, 未來...）", name: "系統" }
+        { bg: "club_room", bgm: "club", text: "放學後，我們在社辦進行最後的衝刺讀書。", name: "" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "今天的課題是「邏輯與聯想」。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "ignore", text: "良好的邏輯能幫助你們在考試時做出正確的推斷。", effect: "breathe" },
+        { text: "（小遊戲詞彙已更新：邏輯, 思考, 答案, 分數, 成功, 智慧...）", name: "系統" }
     ],
     day3_club_minigame_start: [
         { text: "開始合成...", name: "系統" }
@@ -134,78 +138,77 @@ window.day3_script = {
 
     // --- Day 3: After School (放學) ---
     day3_trans_sns: [
-        { bg: "club_room", text: "活動順利結束。看來社團暫時安全了。", name: "我" },
-        { text: "夕陽西下，大家都在收拾東西準備回家。", name: "我" }
+        { bg: "club_room", text: "讀書會圓滿結束。大家雖然很累，但對考試都充滿了信心。", name: "" }
     ],
-    day3_afterschool_prompt: {
-        text: "要跟誰一起走呢？",
+    day3_afterschool_prompt: { // 已修正為 day3_afterschool_prompt
         options: [
-            { text: "和彼得去高級文具店 (彼得)", target: "day3_end_peter", char: "peter", affection: 10 },
-            { text: "和蘭蘭去電玩展 (蘭蘭)", target: "day3_end_lanlan", char: "lanlan", affection: 10 },
-            { text: "和奧拉去咖啡廳 (奧拉)", target: "day3_end_ora", char: "ora", affection: 10 }
+            { location: "學生會辦", action: "陪彼得整理複習資料", target: "day3_end_peter", char: "peter", affection: 10, color: "var(--peter-color)" },
+            { location: "校門口", action: "和蘭蘭去放鬆心情", target: "day3_end_lanlan", char: "lanlan", affection: 10, color: "var(--lanlan-color)" },
+            { location: "實驗室", action: "陪奧拉做最後的數據分析", target: "day3_end_ora", char: "ora", affection: 10, color: "var(--ora-color)" }
         ]
     },
 
     day3_end_peter: [
-        { bg: "arcade", char: "peter", name: "彼得", emotion: "normal", text: "這隻鋼筆的配重很完美。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "smile", text: "用它寫出來的字，感覺都帶有王者的氣息。", effect: "breathe" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "你也買一隻吧。我付錢。別用那種便宜的原子筆污染我的視線。" }
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "normal", text: "呼...總算整理完了。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "謝謝你幫我歸檔。這些資料對社員們來說非常重要。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "normal", text: "天色不早了，我送你回家吧。晚上記得早點睡，別熬夜。" }
     ],
     day3_end_peter_lynn: [
-        { bg: "arcade", char: "peter", name: "彼得", emotion: "happy", text: "貓貓，這對鋼筆是情侶款。", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "smile", text: "上面刻了我們的名字。雖然刻字的人手有點抖，扣分。", effect: "shake" },
-        { char: "peter", name: "彼得", emotion: "happy", text: "但這是屬於我們的印記。收好。" }
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "happy", text: "貓貓，今天辛苦了。", effect: "jump" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "我為你準備了特製的熱牛奶，喝了能助眠。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "夢裡別再讀書了，夢到我就好。晚安，我的貓貓。" }
     ],
 
     day3_end_lanlan: [
-        { bg: "arcade", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "哇！新出的遊戲機！", effect: "jump" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "雖然家裡已經有十台了，但這個顏色不一樣呀！", effect: "breathe" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "買了買了！我們回家連線對戰！" }
+        { bg: "gate", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "終於放學啦！走吧走吧，我們去抓娃娃呀！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "只要抓到那個粉紅色的熊，考試就一定能及格呀！這是蘭蘭的直覺！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "走吧新同學，我幫你抓一打回來呀！" }
     ],
     day3_end_lanlan_jornona: [
-        { bg: "arcade", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆！這個跳舞機我們一定要玩！", effect: "jump" },
-        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "你跳不動沒關係，我背著你跳！", effect: "breathe" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "讓大家看看我們是最強的搭檔！" }
+        { bg: "gate", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "老婆老婆！你看那邊的流星！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "快許願呀！願望一定會實現的呀！", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "我的願望就是...永遠跟老婆在一起呀！" }
     ],
 
     day3_end_ora: [
-        { bg: "restaurant", char: "ora", name: "奧拉", emotion: "normal", text: "這家店的咖啡因含量標示得很清楚。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "ignore", text: "攝取適量的咖啡因有助於大腦皮層活躍。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "你點的那個全是糖漿。這會導致血糖飆升然後昏睡。不推薦。" }
+        { bg: "library", char: "ora", name: "奧拉", emotion: "normal", text: "今天的讀書效率提升了 20%。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "這都要歸功於你在旁邊。你的存在像是一種催化劑。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "明天也要繼續保持這種狀態。走吧，我送你去車站。" }
     ],
     day3_end_ora_melas: [
-        { bg: "restaurant", char: "ora", name: "奧拉", emotion: "normal", text: "蜜拉思，你嘴邊沾到泡沫了。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "smile", text: "（遞過手帕）這種不優雅的行為，只有在你身上看起來不那麼討厭。", effect: "breathe" },
-        { char: "ora", name: "奧拉", emotion: "happy", text: "下次注意點。或者...我可以幫你擦。（眼神微妙）" }
+        { bg: "library", char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，這本書送給你。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "happy", text: "這是我寫的關於邏輯推演的心得，希望能幫到你。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "其實考試什麼的都不重要，重要的是我們一起探求真理的過程。" }
     ],
 
     // --- Day 3: Night Chat (晚間聊天) ---
     day3_chat_start: [
-        { bg: "home", bgm: "home", text: "回到家，心情很放鬆。", name: "我" },
-        { text: "社團的危機解除了，明天又是新的一天。", name: "我" },
-        { text: "手機響了。", name: "我" }
+        { bg: "home", bgm: "home", text: "回到家，雖然腦袋有點沉，但感覺收穫滿滿。", name: "我" },
+        { text: "社團群組又彈出了訊息。", name: "我" }
     ],
     day3_night_chat_content: [
         { type: "chat", id: "sys", text: "系統：Day 3 聊天室開啟" },
-        { type: "chat", id: "peter", text: "報告通過了。風紀委員會那群人果然很好搞定。" },
-        { type: "chat", id: "lanlan", text: "是因為我的支票吧！💰" },
-        { type: "chat", id: "ora", text: "是我的論文。邏輯戰勝一切。" },
-        { type: "chat", id: "lanlan", text: "不管啦！明天去慶祝吧！去唱KTV！" },
-        { type: "choice", options: [
-            { text: "好啊！我要大唱特唱！", next: "day3_chat_excited" },
-            { text: "有點累，想休息...", next: "day3_chat_tired" }
-        ]}
+        { type: "chat", id: "lanlan", text: "大家讀書讀得怎麼樣呀？我已經把書當枕頭睡著了呀。😴" },
+        { type: "chat", id: "peter", text: "蘭蘭！明天不准在社辦睡覺。你要是考不及格，我會親自監督你補習。" },
+        { type: "chat", id: "ora", text: "根據預測，蘭蘭及格的機率是 50%。取決於他明早能不能準時起床。" },
+        { type: "chat", id: "lanlan", text: "誒——彼得好兇呀！新人救我呀！" },
+        {
+            type: "choice", options: [
+                { text: "大家加油，明天繼續努力", next: "day3_chat_excited" },
+                { text: "我也有點累了，先睡了", next: "day3_chat_tired" }
+            ]
+        }
     ],
     day3_chat_excited: [
-        { type: "chat", id: "self", text: "好啊！我要大唱特唱！" },
-        { type: "chat", id: "lanlan", text: "耶！我負責點火...我是說點歌！" },
-        { type: "chat", id: "peter", text: "我要先去消毒麥克風。" },
-        { type: "chat", id: "ora", text: "我會帶耳塞去。為了保護聽力。" }
+        { type: "chat", id: "self", text: "大家加油！為了及格，我們明天繼續努力！" },
+        { type: "chat", id: "peter", text: "說得好。這才是紙校學生該有的樣子。" },
+        { type: "chat", id: "lanlan", text: "好吧...既然大家都這麼說了，我也會努力的呀！🔥" },
+        { type: "chat", id: "ora", text: "熱血是沒用的，還是多看點公式吧。晚安。" }
     ],
     day3_chat_tired: [
-        { type: "chat", id: "self", text: "有點累，想休息..." },
-        { type: "chat", id: "ora", text: "合理的判斷。過度疲勞會降低智商。" },
-        { type: "chat", id: "peter", text: "那就取消。各自回家淨化心靈。" },
-        { type: "chat", id: "lanlan", text: "誒——好吧，那我自己在家開演唱會！" }
+        { type: "chat", id: "self", text: "我也有點累了，大家也早點休息吧，晚安。" },
+        { type: "chat", id: "ora", text: "合理的決定。晚安。" },
+        { type: "chat", id: "peter", text: "晚安。明天別遲到。" },
+        { type: "chat", id: "lanlan", text: "大家晚安呀！夢裡見！🌙" }
     ]
 };
