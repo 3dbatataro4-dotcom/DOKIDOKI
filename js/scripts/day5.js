@@ -1,102 +1,138 @@
 window.day5_script = {
-    // --- Day 5: 秩序與混亂的交會 ---
+    // --- Day 5: 週末約會邀請（結局前夕） ---
     day5_intro: [
-        { bg: "home", bgm: "home", text: "今天是第五天。手機收到了一條來自學生會的緊急通知。", name: "我" },
-        { text: "『請身心靈自助研究社派員參加學園祭籌備會議。缺席者社團將被強制廢除。——學生會長』", name: "手機" },
-        { text: "看來不得不去了。", name: "我" },
+        { bg: "home", bgm: "peace", text: "不知不覺，來到這所學校已經一週了。", name: "我" },
+        { text: "雖然這裡的人都有些古怪，但這份熱鬧卻讓我感到前所未有的充實。", name: "我" },
+        { bg: "gate", text: "今天天氣格外晴朗，微風吹過校園的櫻花樹，花瓣如雪般飄落。", name: "我" }
     ],
 
+    // --- Day 5: Morning Encounter ---
     day5_morning_encounter: [
-        { bg: "classroom", bgm: "peace", text: "來到教室，發現氣氛有點不一樣。", name: "我" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "既然你來了，就把那兩個傢伙帶去會議室。我是會長，我先過去消毒。", name: "彼得" },
-        { text: "彼得丟下這句話就走了，背影看起來充滿了焦慮（和酒精味）。", name: "我" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "會議？聽起來很無聊呀。不過如果有免費點心我就去！", effect: "jump" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "根據校規第 108 條，出席會議能增加社團評分權重。符合邏輯的選擇。", name: "奧拉" },
-    ],
-    
-    // --- 學生會辦公室：三方會談 ---
-    day5_meeting_start: [
-        { bg: "club_room", bgm: "club", text: "學生會辦公室出乎意料地...乾淨到令人髮指。", name: "我" }, // 暫時用社團教室背景代替
-        { text: "空氣中瀰漫著濃烈的消毒水味。", name: "我" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "（拿著噴霧）進來前先消毒鞋底。左腳，右腳，轉身。好，勉強及格。", name: "彼得" },
-        { char: "lanlan", name: "蘭蘭", emotion: "bored", text: "哇，這個人是潔癖怪嗎？我的鞋子可是昨天剛買的限量版呀！", effect: "shake" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "空氣中乙醇濃度超過 75%。長時間吸入可能導致神經麻痺。", name: "奧拉" },
-        { char: "peter", name: "彼得", emotion: "angry", text: "閉嘴。那是聖水的味道。現在，開始會議。", effect: "shake" },
+        { bg: "classroom", text: "走進教室，氣氛顯得比平時安靜一些，但卻有一種溫馨的感覺。", name: "我" },
+        { char: "peter", name: "彼得", emotion: "normal", text: "明天就是週末了。Shit，你該不會打算在家裡宅兩天吧？那樣空氣不流通，會生病的。", effect: "breathe" },
+        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "對呀對呀！週末我們出去玩吧！蘭蘭已經把遊樂園的票買好啦！", effect: "jump" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "我查過週末的展覽清單。有一個關於「多維空間與情感聯繫」的特展，很有意義。", effect: "breathe" },
+        { text: "看來大家都有自己的計畫。", name: "我" }
     ],
 
-    day5_meeting_discussion: [
-        { text: "會議桌上，彼得坐在主位，蘭蘭把腳翹在椅子上，奧拉則拿出了一個計算機。", name: "我" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "學園祭的主題是『純淨與秩序』。所有攤位必須符合衛生標準。", name: "彼得" },
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "反對！我要辦燒烤大會！而且我要幫喬諾娜申請一個超大的舞台！老婆唱歌最好聽了！", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "confused", text: "喬諾娜？那個粉紅色頭髮的仿生人？噪音製造者二號？駁回。", name: "彼得" },
-        { char: "lanlan", name: "蘭蘭", emotion: "angry", text: "你說什麼？！你竟敢說我老婆是噪音？！我要把你這間辦公室燒了！", effect: "shake" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "根據數據，燃燒辦公室的賠償金額將是你零用錢的 300 倍。不建議執行。", name: "奧拉" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "另外，我申請批准蜜拉思的『未知化學飲品』攤位。雖然致死率未知，但實驗數據很有價值。", name: "奧拉" },
-        { char: "peter", name: "彼得", emotion: "horror", text: "蜜拉思...那個頭上長花的陰沉傢伙？絕對不行！學校會變成生化危機現場！我要去請林恩來坐鎮...只有貓貓能淨化這些汙穢...", effect: "shake" },
-        { char: "lanlan", name: "蘭蘭", emotion: "surprise", text: "林恩？那個有錢的大老闆？原來他是你的吉祥物呀？", name: "蘭蘭" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "關聯建立：彼得依賴林恩，蘭蘭依賴喬諾娜，我觀測蜜拉思。人類（與非人類）的社交網絡圖譜已更新。", name: "奧拉" },
-        { text: "三個人的視線在空中交會，雖然充滿了火藥味，但也算是一種...認識吧？", name: "我" }
-    ],
-
-    day5_meeting_choice: {
-        text: "場面一度混亂，你決定幫誰說話？",
+    // --- Day 5: Break Choice (課間) ---
+    day5_break_prompt: {
+        text: "下課了，大家似乎都在等待我的回答。",
         options: [
-            { text: "支持彼得的衛生標準", next: "day5_support_peter", affection: { peter: 5, lanlan: -2 } },
-            { text: "支持蘭蘭的燒烤與舞台", next: "day5_support_lanlan", affection: { lanlan: 5, peter: -2 } },
-            { text: "支持奧拉的實驗攤位", next: "day5_support_ora", affection: { ora: 5, peter: -2 } }
+            { location: "走廊", action: "聽聽彼得的「週末衛生指南」", target: "day5_break_peter", char: "peter", affection: 5, color: "var(--peter-color)" },
+            { location: "後門", action: "看蘭蘭準備的遊樂園攻略", target: "day5_break_lanlan", char: "lanlan", affection: 5, color: "var(--lanlan-color)" },
+            { location: "座位", action: "和奧拉討論展覽內容", target: "day5_break_ora", char: "ora", affection: 5, color: "var(--ora-color)" }
         ]
     },
 
-    day5_support_peter: [
-        { char: "peter", name: "彼得", emotion: "smile", text: "看來這裡還有一個正常人。庶民，你很有前途。", name: "彼得" },
-        { char: "lanlan", name: "蘭蘭", emotion: "bored", text: "切，真無聊。轉學生你也變成了潔癖怪的走狗了呀。", name: "蘭蘭" }
+    day5_break_peter: [
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "smile", text: "週末...如果你沒事的話，我可以勉強陪你去公園走走。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "我會帶上全套的野餐裝備。Shit，別誤會，我只是想確保你在外面的飲食衛生而已！" }
     ],
-    day5_support_lanlan: [
-        { char: "lanlan", name: "蘭蘭", emotion: "happy", text: "耶！轉學生最好了！到時候第一串烤肉給你吃！", effect: "jump" },
-        { char: "peter", name: "彼得", emotion: "horror", text: "不可理喻...我要去喝點潔廁靈冷靜一下...", name: "彼得" }
+    day5_break_lanlan: [
+        { bg: "classroom", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "新同學！我們去坐摩天輪呀！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "在最高點的時候，我們一起看夕陽呀！蘭蘭會幫你拍很多漂亮的照片呀！" }
     ],
-    day5_support_ora: [
-        { char: "ora", name: "奧拉", emotion: "smile", text: "明智的判斷。你將獲得第一批實驗藥水的試飲權。", name: "奧拉" },
-        { char: "peter", name: "彼得", emotion: "normal", text: "這學校沒救了。", name: "彼得" }
-    ],
-
-    day5_meeting_end: [
-        { text: "會議在一片混亂中結束了。雖然什麼結論都沒達成，但至少他們記住了彼此（的缺點）。", name: "我" },
-        { bg: "gate", text: "走出辦公室，大家都鬆了一口氣。", name: "我" },
-        { char: "lanlan", name: "蘭蘭", emotion: "normal", text: "那個彼得雖然討厭，但如果林恩真的那麼有錢，或許我可以找他贊助一下...", name: "蘭蘭" },
-        { char: "ora", name: "奧拉", emotion: "normal", text: "彼得的精神狀態異常，值得作為對照組。", name: "奧拉" },
-        { text: "看來這場修羅場才剛剛開始。", name: "我" }
+    day5_break_ora: [
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "展覽的數據量很大，我建議我們早點出發。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，我希望你能成為我的共同觀察者。這對我們未來的「研究」很重要。" }
     ],
 
-    // --- 放學與晚上 ---
-    day5_trans_home: [
-        { bg: "home", bgm: "home", text: "這一天過得比打仗還累。", name: "我" },
-        { text: "不知道他們在群組裡還會不會繼續吵。", name: "我" }
+    // --- Day 5: Lunch (午休) ---
+    day5_trans_lunch: [
+        { bg: "corridor", text: "午休時間，校慶的餘溫還在，週末的期待已經升起。", name: "我" }
+    ],
+    day5_lunch_prompt: {
+        options: [
+            { location: "學生會辦", action: "和彼得確認約會時間", target: "day5_lunch_peter", char: "peter", affection: 15, color: "var(--peter-color)" },
+            { location: "高級餐廳", action: "和蘭蘭挑選約會服裝", target: "day5_lunch_lanlan", char: "lanlan", affection: 15, color: "var(--lanlan-color)" },
+            { location: "視聽教室", action: "和奧拉預約展覽門票", target: "day5_lunch_ora", char: "ora", affection: 15, color: "var(--ora-color)" }
+        ]
+    },
+
+    day5_lunch_peter: [
+        { bg: "club_room", char: "peter", name: "彼得", emotion: "happy", text: "早上十點，在公園門口集合。遲到一秒鐘我就把你拉進黑名單。Shit，我是說，準時是很重要的！", effect: "jump" },
+        { char: "peter", name: "彼得", emotion: "smile", text: "我會穿那件你說好看的白色制服。你...也穿漂亮點。" }
+    ],
+    day5_lunch_lanlan: [
+        { bg: "restaurant", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "這件衣服太適合你了呀！買了！那件也買了！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "週末我們要穿得漂亮點去遊樂園呀！讓全校的人都羨慕我們呀！" }
+    ],
+    day5_lunch_ora: [
+        { bg: "classroom", char: "ora", name: "奧拉", emotion: "normal", text: "門票已經存入你的手機了。QR Code 是動態加密的。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "smile", text: "蜜拉思，我已經規劃好了最短的路徑。這樣我們就能在展館關門前，完成所有的數據交換。" }
     ],
 
+    // --- Day 5: Club (社團活動 - 小遊戲) ---
+    day5_trans_club: [
+        { bg: "club_room", bgm: "club", text: "放學後，我們在社辦進行這一週最後一次的活動。", name: "" },
+        { char: "ora", name: "奧拉", emotion: "normal", text: "今天的課題是「承諾與未來」。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "ignore", text: "希望這一週的學習，能讓你們對自己的心意有更清晰的認識。", effect: "breathe" },
+        { text: "（小遊戲詞彙已更新：承諾, 守護, 永恆, 約定, 笑容, 幸福...）", name: "系統" }
+    ],
+    day5_club_minigame_start: [
+        { text: "開始合成...", name: "系統" }
+    ],
+
+    // --- Day 5: After School (SNS) ---
+    day5_trans_sns: [
+        { bg: "club_room", text: "活動結束了。大家互相告別，約定好週末見。", name: "" },
+        { text: "夕陽西下，大家都在收拾東西準備回家。", name: "我" }
+    ],
+    day5_afterschool_prompt: {
+        options: [
+            { location: "學生會辦", action: "陪彼得做最後的清掃", target: "day5_end_peter", char: "peter", affection: 10, color: "var(--peter-color)" },
+            { location: "校門口", action: "和蘭蘭去買慶祝蛋糕", target: "day5_end_lanlan", char: "lanlan", affection: 10, color: "var(--lanlan-color)" },
+            { location: "實驗室", action: "陪奧拉備份這週的數據", target: "day5_end_ora", char: "ora", affection: 10, color: "var(--ora-color)" }
+        ]
+    },
+    day5_end_peter: [
+        { bg: "classroom", char: "peter", name: "彼得", emotion: "smile", text: "這一週辛苦你了。Shit，你表現得比我想像中要好得多。", effect: "breathe" },
+        { char: "peter", name: "彼得", emotion: "happy", text: "回家好好休息。週末見，新生。" },
+        { text: "（放學後時光結束）", target: "day5_chat_start" }
+    ],
+    day5_end_lanlan: [
+        { bg: "gate", char: "lanlan", name: "蘭蘭", emotion: "happy", text: "新同學週末見呀！蘭蘭會想你的呀！", effect: "jump" },
+        { char: "lanlan", name: "蘭蘭", emotion: "smile", text: "我會準時派車去接你的呀！" },
+        { text: "（放學後時光結束）", target: "day5_chat_start" }
+    ],
+    day5_end_ora: [
+        { bg: "library", char: "ora", name: "奧拉", emotion: "smile", text: "數據備份完成。新同學，週末見。", effect: "breathe" },
+        { char: "ora", name: "奧拉", emotion: "happy", text: "希望明天的情況，依然在我的掌控之中。" },
+        { text: "（放學後時光結束）", target: "day5_chat_start" }
+    ],
+
+
+    // --- Day 5: Night Chat ---
     day5_chat_start: [
-        { type: "chat", id: "sys", text: "--- Day 5 聊天室開啟 ---" },
-        { type: "chat", id: "peter", text: "今天的會議室空氣品質指數：極差。" },
-        { type: "chat", id: "lanlan", text: "潔癖怪閉嘴呀！我要去跟喬諾娜告狀！" },
-        { type: "chat", id: "ora", text: "建議：下次會議改為線上進行，可提升效率 400%。" },
+        { bg: "home", bgm: "home", text: "躺在床上，回想著這一週發生的一切。", name: "我" },
+        { text: "原本平凡的生活，似乎因為這三個人而變得截然不同了。", name: "我" },
+        { text: "手機提示音響起。", name: "我" }
     ],
-    
     day5_night_chat_content: [
-        { type: "choice", options: [
-            { text: "大家今天都辛苦了...", next: "day5_chat_tired" },
-            { text: "我覺得其實挺有趣的！", next: "day5_chat_fun" }
-        ]}
+        { type: "chat", id: "sys", text: "系統：Day 5 聊天室開啟" },
+        { type: "chat", id: "lanlan", text: "大家週末都要準時呀！不然蘭蘭會生氣呀！🔥" },
+        { type: "chat", id: "peter", text: "我已經設置了五個鬧鐘。絕對不會遲到。Shit，你們也一樣。" },
+        { type: "chat", id: "ora", text: "我的生物鐘已經精確到秒。不需要擔心。" },
+        {
+            type: "choice", options: [
+                { text: "期待週末見到大家！", next: "day5_chat_finish" },
+                { text: "大家晚安，週末見", next: "day5_chat_finish" }
+            ]
+        }
     ],
-    
-    day5_chat_tired: [
-        { type: "chat", id: "self", text: "大家今天都辛苦了...早點休息吧。" },
-        { type: "chat", id: "lanlan", text: "我不累！我要去找老婆！" },
-        { type: "chat", id: "peter", text: "我也要去淨化我的眼睛。" }
+    day5_chat_finish: [
+        { type: "chat", id: "self", text: "週末見，大家晚安！" },
+        { type: "chat", id: "peter", text: "晚安。" },
+        { type: "chat", id: "lanlan", text: "晚安呀大家！✨" },
+        { type: "chat", id: "ora", text: "晚安。連線中斷。" },
+        { text: "（第一週結束。下週...會發生什麼呢？）", target: "week1_ending_check" }
     ],
-
-    day5_chat_fun: [
-        { type: "chat", id: "self", text: "我覺得其實挺有趣的！大家各有特色嘛。" },
-        { type: "chat", id: "ora", text: "「特色」是非量化形容詞。精確來說是「異常」。" },
-        { type: "chat", id: "peter", text: "哼。" }
+    week1_ending_check: [
+        { bg: "home", text: "（本體驗版到此結束，感謝遊玩！）", name: "系統" },
+        { text: "即將返回標題畫面...", target: "title_screen" }
+    ],
+    title_screen: [
+        { text: "重新載入中...", action: () => location.reload() }
     ]
 };
